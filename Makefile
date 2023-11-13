@@ -19,4 +19,4 @@ restart:
 	@sudo systemctl restart ulogd2; sudo systemctl status ulogd2
 
 install:
-	@sudo apt install -y ulogd2 ulogd2-sqlite3
+	@sudo apt install -y ulogd2 ulogd2-sqlite3 sqlite3
