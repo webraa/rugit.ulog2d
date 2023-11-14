@@ -1,5 +1,5 @@
 help:
-	@view Makefile
+	@cat Makefile
 ulog.config:
 	@sudo nvim /etc/ulogd.conf
 proposed.config:
