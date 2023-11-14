@@ -7,7 +7,8 @@ proposed.config:
 install.config:
 	@sudo cp -v ./etc/ulogd.conf /etc/
 reset.sqlt:
-	@./scripts/create-table.sh
+	@./scripts/re-create-bootlog.sh
+	@./scripts/re-create-mainlog.sh
 restart:
 	@sudo systemctl restart ulogd2; sudo systemctl status ulogd2
 install:
