@@ -17,3 +17,6 @@ pull:
 	@git pull
 savetogit:
 	@git add . && git commit -m 'saving' && git push
+test.sqlt:
+	@sudo rm -vf /var/log/ulog/tst_log-sqlt3.db
+	@sudo sqlite3 /var/log/ulog/tst_log-sqlt3.db < ./sqlt3-schm/field-list.schema
