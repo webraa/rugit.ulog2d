@@ -1,5 +1,5 @@
 CREATE TABLE all_in (
-	state			INT UNSIGNED,
+	-- state			INT UNSIGNED,
 		-- raw
 	raw_pktlen		INT UNSIGNED,
 	raw_pktcount		INT UNSIGNED,
