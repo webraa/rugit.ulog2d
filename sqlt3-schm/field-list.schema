@@ -1,11 +1,16 @@
 CREATE TABLE all_in (
 		-- oob
-  	oob_prefix		TEXT,
-  	oob_time_sec		INT UNSIGNED,
-  	oob_time_usec		INT UNSIGNED,
-  	oob_uid			INT UNSIGNED,
-  	oob_in			TEXT,
-  	oob_out			TEXT,
+	oob_prefix		TEXT,
+	oob_time_sec		INT UNSIGNED,
+	oob_time_usec		INT UNSIGNED,
+	oob_hook		INT UNSIGNED,
+	oob_family		INT UNSIGNED,
+	oob_protocol		INT UNSIGNED,
+	oob_mark		INT UNSIGNED,
+	oob_in			TEXT,
+	oob_out			TEXT,
+	oob_uid			INT UNSIGNED,
+	oob_gid			INT UNSIGNED,
 		-- hw
   	mac_saddr_str		TEXT,
   	mac_daddr_str		TEXT,
