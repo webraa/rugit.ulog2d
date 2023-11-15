@@ -1,9 +1,10 @@
 CREATE TABLE all_in (
+	ct_state		INT UNSIGNED,
+		-- raw
 	raw_pktlen		INT UNSIGNED,
 	raw_pktcount		INT UNSIGNED,
 	raw_type		INT UNSIGNED,
 	raw_label		INT UNSIGNED,
-	ct_mark			INT UNSIGNED,
 		-- oob
 	oob_prefix		TEXT,
 	oob_time_sec		INT UNSIGNED,
