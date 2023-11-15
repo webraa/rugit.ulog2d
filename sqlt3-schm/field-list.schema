@@ -24,13 +24,13 @@ CREATE TABLE all_in (
   	ip_saddr_str		TEXT,
   	ip_daddr_str		TEXT,
 		-- IPv4
-  	ip_protocol		INT UNSIGNED,
+	ip_totlen		INT UNSIGNED,
+  	ip_ihl			INT UNSIGNED,
   	ip_tos			INT UNSIGNED,
   	ip_ttl			INT UNSIGNED,
-  	ip_totlen		INT UNSIGNED,
-  	ip_ihl			INT UNSIGNED,
-  	ip_csum			INT UNSIGNED,
   	ip_id			INT UNSIGNED,
+  	ip_protocol		INT UNSIGNED,
+  	ip_csum			INT UNSIGNED,
   	ip_fragoff		INT UNSIGNED,
 		-- IPv6
   	ip6_payloadlen		INT UNSIGNED,
