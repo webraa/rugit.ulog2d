@@ -1,8 +1,8 @@
 CREATE TABLE all_in (
 	raw_pktlen		INT UNSIGNED,
 	raw_pktcount		INT UNSIGNED,
-	raw_pkttype		INT UNSIGNED,
-	raw_pktlabel		INT UNSIGNED,
+	raw_type		INT UNSIGNED,
+	raw_label		INT UNSIGNED,
 	ct_mark			INT UNSIGNED,
 		-- oob
 	oob_prefix		TEXT,
