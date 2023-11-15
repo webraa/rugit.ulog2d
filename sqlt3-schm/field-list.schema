@@ -5,6 +5,7 @@ CREATE TABLE all_in (
   	oob_uid			INT UNSIGNED,
   	oob_in			TEXT,
   	oob_out			TEXT,
+	-- comment
   	mac_saddr_str		TEXT,
   	mac_daddr_str		TEXT,
   	ip_saddr_str		TEXT,
