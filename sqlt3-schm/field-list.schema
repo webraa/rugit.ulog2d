@@ -1,11 +1,12 @@
 CREATE TABLE all_in (
+	-- oob
   	oob_prefix		TEXT,
   	oob_time_sec		INT UNSIGNED,
   	oob_time_usec		INT UNSIGNED,
   	oob_uid			INT UNSIGNED,
   	oob_in			TEXT,
   	oob_out			TEXT,
-	-- comment
+	-- hw
   	mac_saddr_str		TEXT,
   	mac_daddr_str		TEXT,
   	ip_saddr_str		TEXT,
@@ -46,12 +47,14 @@ CREATE TABLE all_in (
   	udp_dport		INT UNSIGNED,
   	udp_len			INT UNSIGNED,
   	udp_csum		INT UNSIGNED,
+	-- icmp
   	icmp_type		INT UNSIGNED,
   	icmp_code		INT UNSIGNED,
   	icmp_echoid		INT UNSIGNED,
   	icmp_echoseq		INT UNSIGNED,
   	icmp_fragmtu		INT UNSIGNED,
   	icmp_csum		INT UNSIGNED,
+	-- ICMPv6
   	icmpv6_type		INT UNSIGNED,
   	icmpv6_code		INT UNSIGNED,
   	icmpv6_echoid		INT UNSIGNED,
@@ -61,7 +64,8 @@ CREATE TABLE all_in (
   	sctp_sport		INT UNSIGNED,
   	sctp_dport		INT UNSIGNED,
   	sctp_csum		INT UNSIGNED,
-  	arp_saddr_str		TEXT,
+  	-- arp
+	arp_saddr_str		TEXT,
   	arp_daddr_str		TEXT,
   	arp_hwtype		INT UNSIGNED,
   	arp_protocoltype	INT UNSIGNED,
