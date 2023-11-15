@@ -1,4 +1,4 @@
-CREATE TABLE bootlog (
+CREATE TABLE mainlog (
   	oob_prefix		TEXT,
   	oob_time_sec		INT UNSIGNED,
   	oob_time_usec		INT UNSIGNED,
