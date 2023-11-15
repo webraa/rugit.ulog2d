@@ -1,5 +1,5 @@
 CREATE TABLE all_in (
-	conn_mark		INT UNSIGNED,
+	state			INT UNSIGNED,
 		-- raw
 	raw_pktlen		INT UNSIGNED,
 	raw_pktcount		INT UNSIGNED,
@@ -18,6 +18,7 @@ CREATE TABLE all_in (
 	oob_uid			INT UNSIGNED,
 	oob_gid			INT UNSIGNED,
 		-- hw
+	mac_str			TEXT,
   	mac_saddr_str		TEXT,
   	mac_daddr_str		TEXT,
 		-- ip (text)
@@ -33,12 +34,12 @@ CREATE TABLE all_in (
   	ip_csum			INT UNSIGNED,
   	ip_fragoff		INT UNSIGNED,
 		-- IPv6
-  	ip6_payloadlen		INT UNSIGNED,
-  	ip6_priority		INT UNSIGNED,
-  	ip6_flowlabel		INT UNSIGNED,
-  	ip6_hoplimit		INT UNSIGNED,
-  	ip6_nexthdr		INT UNSIGNED,
-  	ip6_fragoff		INT UNSIGNED,
+	ip6_payloadlen		INT UNSIGNED,
+	ip6_priority		INT UNSIGNED,
+	ip6_hoplimit		INT UNSIGNED,
+	ip6_flowlabel		INT UNSIGNED,
+	ip6_nexthdr		INT UNSIGNED,
+	ip6_fragoff		INT UNSIGNED,
   	ip6_fragid		INT UNSIGNED,
 		-- TCP
   	tcp_sport		INT UNSIGNED,
