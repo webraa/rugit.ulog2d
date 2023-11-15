@@ -1,10 +1,15 @@
 CREATE TABLE all_in (
+	raw_pktlen		INT UNSIGNED,
+	raw_pktcount		INT UNSIGNED,
+	raw_pkttype		INT UNSIGNED,
+	raw_pktlabel		INT UNSIGNED,
+	ct_mark			INT UNSIGNED,
 		-- oob
 	oob_prefix		TEXT,
 	oob_time_sec		INT UNSIGNED,
 	oob_time_usec		INT UNSIGNED,
 	oob_hook		INT UNSIGNED,
-	oob_family		INT UNSIGNED,
+	oob_family		INT UNSIGNED, -- ip=1 inet=2 arp=3
 	oob_protocol		INT UNSIGNED,
 	oob_mark		INT UNSIGNED,
 	oob_in			TEXT,
