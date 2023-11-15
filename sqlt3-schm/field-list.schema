@@ -18,7 +18,7 @@ CREATE TABLE all_in (
 	oob_uid			INT UNSIGNED,
 	oob_gid			INT UNSIGNED,
 		-- hw
-	mac_str			TEXT,
+	-- mac_str			TEXT,
   	mac_saddr_str		TEXT,
   	mac_daddr_str		TEXT,
 		-- ip (text)
