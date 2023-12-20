@@ -1,22 +1,31 @@
 help:
 	@cat Makefile
-ulog.config:
-	@sudo nvim /etc/ulogd.conf
-proposed.config:
-	@nvim ./etc/ulogd.conf
-install.config:
-	@sudo cp -v ./etc/ulogd.conf /etc/
-reset.sqlt:
-	@./scripts/re-create-bootlog.sh
-	@./scripts/re-create-mainlog.sh
-restart:
-	@sudo systemctl restart ulogd2; sudo systemctl status ulogd2
-install:
-	@sudo apt install -y ulogd2 ulogd2-sqlite3 sqlite3
+
 pull:
 	@git pull
-savetogit:
-	@git add . && git commit -m 'saving' && git push
-test.sqlt:
-	@sudo rm -vf /var/log/ulog/tst_log-sqlt3.db
-	@sudo sqlite3 /var/log/ulog/tst_log-sqlt3.db < ./sqlt3-schm/field-list.schema
+
+savetogit: git.pushall
+git.pushall: git.commitall
+	@git push
+git.commitall: git.addall
+	@if [ -n "$(shell git status -s)" ] ; then git commit -m 'saving'; else echo '--- nothing to commit'; fi
+git.addall:
+	@git add .
+
+apt.install:
+	@sudo apt update
+	@sudo apt install -y ulogd2 ulogd2-sqlite3 sqlite3
+edit:
+	@nvim ./configs/ulogd.conf
+install:
+	@sudo cp -vfb ./configs/ulogd.conf /etc/ulogd.conf
+sysedit:
+	@sudo nvim /etc/ulogd.conf
+db.reset:
+	@./scripts/re-create-bootlog.sh
+	@./scripts/re-create-mainlog.sh
+
+status:
+	@sudo systemctl status ulogd2
+restart:
+	@sudo systemctl restart ulogd2
