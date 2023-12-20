@@ -24,6 +24,7 @@ sysedit:
 db.reset:
 	@./scripts/re-create-bootlog.sh
 	@./scripts/re-create-mainlog.sh
+	@./scripts/re-create-alterlog.sh
 
 status:
 	@sudo systemctl status ulogd2
