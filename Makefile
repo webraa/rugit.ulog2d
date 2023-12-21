@@ -26,6 +26,8 @@ db.reset:
 	@./scripts/re-create-mainlog.sh
 	@./scripts/re-create-alterlog.sh
 
+monitor:
+	@./scripts/monitor.sh
 status:
 	@sudo systemctl status ulogd2
 restart:
