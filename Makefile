@@ -26,8 +26,9 @@ db.reset:
 	@./scripts/re-create-mainlog.sh
 	@./scripts/re-create-alterlog.sh
 
-monitor:
-	@./scripts/monitor.sh
+monitor.bootlog:
+	@./scripts/monitor.sh /var/log/ulog/bootlog_sqlt3.db ./sqlt3-schm/bootlog.sql
+
 status:
 	@sudo systemctl status ulogd2
 restart:
