@@ -1,5 +1,5 @@
 .mode column
-.width 20 30 30 9 12 10
+.width 20 16 16 9 12 10
 SELECT
 	datetime(oob_time_sec, 'unixepoch') as timestamp,
 	ip_saddr_str,ip_daddr_str,
