@@ -28,8 +28,10 @@ db.reset:
 
 bootlog:
 	@./scripts/monitor.sh /var/log/ulog/bootlog-sqlt3.db ./sqlt3-schm/bootlog.sql
-monitor:
+mainlog:
 	@./scripts/monitor.sh /var/log/ulog/mainlog-sqlt3.db ./sqlt3-schm/mainlog.sql
+monitor:
+	@./scripts/monitor.sh /var/log/ulog/alterlog-sqlt3.db ./sqlt3-schm/alterlog.sql
 
 status:
 	@sudo systemctl status ulogd2
