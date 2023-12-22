@@ -27,11 +27,11 @@ db.reset:
 	@./scripts/re-create-alterlog.sh
 
 bootlog:
-	@./scripts/monitor.sh /var/log/ulog/bootlog-sqlt3.db ./sqlt3-schm/bootlog.sql
+	@./scripts/monitor.sh /var/log/ulog/bootlog-sqlt3.db	./sql/bootlog.sql
 mainlog:
-	@./scripts/monitor.sh /var/log/ulog/mainlog-sqlt3.db ./sqlt3-schm/mainlog.sql
+	@./scripts/monitor.sh /var/log/ulog/mainlog-sqlt3.db	./sql/mainlog.sql
 monitor:
-	@./scripts/monitor.sh /var/log/ulog/alterlog-sqlt3.db ./sqlt3-schm/alterlog.sql
+	@./scripts/monitor.sh /var/log/ulog/alterlog-sqlt3.db	./sql/alterlog.sql
 
 status:
 	@sudo systemctl status ulogd2
