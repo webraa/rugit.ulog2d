@@ -22,5 +22,6 @@ CREATE TABLE alterlog (
   	icmp_code		INT UNSIGNED,
   	icmpv6_type		INT UNSIGNED,
   	icmpv6_code		INT UNSIGNED,
+  	icmp_echoseq		INT UNSIGNED,
 	PRIMARY KEY ( oob_time_sec, oob_time_usec )
 );
