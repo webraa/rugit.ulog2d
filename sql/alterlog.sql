@@ -1,5 +1,5 @@
 .mode column
-.width 20 30 30 9 10 10
+.width 20 30 30 9 12 10
 SELECT
 	datetime(oob_time_sec, 'unixepoch') as timestamp,
 	ip_saddr_str,ip_daddr_str,
@@ -44,7 +44,7 @@ SELECT
 	END ip_proto,
 	CASE ip_protocol
 		WHEN 6
-			THEN tcp_sport||' --> '||tcp_dport
+			THEN tcp_sport||'->'||tcp_dport
 		WHEN 1
 			THEN
 				CASE icmp_type
