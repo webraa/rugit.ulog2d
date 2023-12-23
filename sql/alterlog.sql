@@ -1,9 +1,11 @@
 .mode column
-.width 20 10 16 16 9 7 10
+.width 20 10 16 10 16 9 7 10
 SELECT
 	datetime(oob_time_sec, 'unixepoch') as timestamp,
 	oob_prefix as info,
-	ip_saddr_str,ip_daddr_str,
+	ip_saddr_str,
+	(SELECT SUM( IIF(s1.ip_saddr_str = ip_saddr_str, 1, 0) ) FROM alterlog ) AS xCNT,
+	ip_daddr_str,
 	CASE ip_protocol
 		WHEN 0
 			THEN 'v6-HopOpt'
@@ -63,6 +65,6 @@ SELECT
 				END
 	END 'echo/SP',
 	icmp_echoseq
-FROM alterlog
+FROM alterlog AS s1
 ORDER BY oob_time_sec desc, oob_time_usec desc
 LIMIT 37;
