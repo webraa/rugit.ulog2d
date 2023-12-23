@@ -1,7 +1,8 @@
 .mode column
-.width 20 16 16 9 12 10
+.width 20 10 16 16 9 7 10
 SELECT
 	datetime(oob_time_sec, 'unixepoch') as timestamp,
+	oob_prefix as info,
 	ip_saddr_str,ip_daddr_str,
 	CASE ip_protocol
 		WHEN 0
@@ -13,9 +14,9 @@ SELECT
 		WHEN 4
 			THEN 'IP-IP'
 		WHEN 6
-			THEN 'TCP'
+			THEN 'TCP:'||tcp_dport
 		WHEN 17
-			THEN 'UDP'
+			THEN 'udp:'||udp_dport
 		WHEN 41
 			THEN 'IPv6-IP'
 		WHEN 43
@@ -44,21 +45,23 @@ SELECT
 	END ip_proto,
 	CASE ip_protocol
 		WHEN 6
-			THEN tcp_sport||'->'||tcp_dport
+			THEN '<-'||tcp_sport
+		WHEN 17
+			THEN '<-'||udp_sport
 		WHEN 1
 			THEN
 				CASE icmp_type
 					WHEN 0
-						THEN 'echo reply'
+						THEN 'reply'
 					WHEN 3
-						THEN 'dest. unreach'
+						THEN 'unrch'
 					WHEN 8
 						THEN 'echo'
 					WHEN 11
-						THEN 'time exceeded'
+						THEN 'tm.xcdd'
 					ELSE '('||icmp_type||')'
 				END
-	END options,
+	END 'echo/SP',
 	icmp_echoseq
 FROM alterlog
 ORDER BY oob_time_sec desc, oob_time_usec desc
